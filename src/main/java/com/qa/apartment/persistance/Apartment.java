@@ -10,7 +10,7 @@ public class Apartment {
 	
 	@Id @GeneratedValue(strategy=GenerationType.AUTO)
 	private Long id;
-	
+	/*
 	@Column
 	@NotNull	
 	private String buildingName;
@@ -25,18 +25,18 @@ public class Apartment {
 	@Column
 	@NotNull
 	private String tenant;
-	
+	*/
 	@Column
 	@NotNull
 	@Temporal(TemporalType.DATE)
 	private Date leaseStart;
-	
 	@Column
 	@NotNull
 	private String leaseEnd;
 	@Column
 	@NotNull
 	private String breakClause;
+	/*
 	@Column
 	@NotNull
 	private String agencyPhoneNo;
@@ -53,7 +53,7 @@ public class Apartment {
 	@Column
 	@NotNull
 	private Double deposit;
-	
+	*/
 	
 	public Apartment() {
 		
@@ -67,7 +67,7 @@ public class Apartment {
 		this.id = id;
 	}
 
-	
+	/*
 	public String getBuildingName() {
 		return buildingName;
 	}
@@ -107,7 +107,7 @@ public class Apartment {
 	public void setTenant(String tenant) {
 		this.tenant = tenant;
 	}
-	
+	*/
 	public Date getLeaseStart() {
 		return leaseStart;
 	}
@@ -131,7 +131,7 @@ public class Apartment {
 	public void setBreakClause(String breakClause) {
 		this.breakClause = breakClause;
 	}
-
+	/*
 	public String getAgencyPhoneNo() {
 		return agencyPhoneNo;
 	}
@@ -179,5 +179,5 @@ public class Apartment {
 	public void setDeposit(Double deposit) {
 		this.deposit = deposit;
 	}
-
+	*/
 }
