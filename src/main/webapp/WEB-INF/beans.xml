@@ -24,6 +24,8 @@
       
       <alternatives>
       	<class>com.qa.apartment.business.PersonMapImpl</class>
-        <class>com.qa.bookstore.business.RoomImple</class>
+        <class>com.qa.apartment.business.RoomImpl</class>
+        <class>com.qa.apartment.business.ScheduleImple</class>
+        <class>com.qa.apartment.business.ApartmentServiceMapImpl</class>
       </alternatives>
 </beans>

@@ -10,7 +10,7 @@ public class Apartment {
 	
 	@Id @GeneratedValue(strategy=GenerationType.AUTO)
 	private Long id;
-	
+	/*
 	@Column
 	@NotNull	
 	private String buildingName;
@@ -25,18 +25,20 @@ public class Apartment {
 	@Column
 	@NotNull
 	private String tenant;
-	
+	*/
 	@Column
 	@NotNull
 	@Temporal(TemporalType.DATE)
 	private Date leaseStart;
-	
 	@Column
 	@NotNull
-	private String leaseEnd;
+	@Temporal(TemporalType.DATE)
+	private Date leaseEnd;
 	@Column
 	@NotNull
-	private String breakClause;
+	@Temporal(TemporalType.DATE)
+	private Date breakClause;
+	/*
 	@Column
 	@NotNull
 	private String agencyPhoneNo;
@@ -53,6 +55,7 @@ public class Apartment {
 	@Column
 	@NotNull
 	private Double deposit;
+	*/
 	
 	
 	public Apartment() {
@@ -66,8 +69,7 @@ public class Apartment {
 	public void setId(Long id) {
 		this.id = id;
 	}
-
-	
+	/*
 	public String getBuildingName() {
 		return buildingName;
 	}
@@ -107,7 +109,7 @@ public class Apartment {
 	public void setTenant(String tenant) {
 		this.tenant = tenant;
 	}
-	
+	*/
 	public Date getLeaseStart() {
 		return leaseStart;
 	}
@@ -116,22 +118,22 @@ public class Apartment {
 		this.leaseStart = leaseStart;
 	}
 	
-	public String getLeaseEnd() {
+	public Date getLeaseEnd() {
 		return leaseEnd;
 	}
 
-	public void setLeaseEnd(String leaseEnd) {
+	public void setLeaseEnd(Date leaseEnd) {
 		this.leaseEnd = leaseEnd;
 	}
 
-	public String getBreakClause() {
+	public Date getBreakClause() {
 		return breakClause;
 	}
 
-	public void setBreakClause(String breakClause) {
+	public void setBreakClause(Date breakClause) {
 		this.breakClause = breakClause;
 	}
-
+	/*
 	public String getAgencyPhoneNo() {
 		return agencyPhoneNo;
 	}
@@ -139,6 +141,7 @@ public class Apartment {
 	public void setAgencyPhoneNo(String agencyPhoneNo) {
 		this.agencyPhoneNo = agencyPhoneNo;
 	}
+	
 	
 	public Integer getNoRooms() {
 		return noRooms;
@@ -179,5 +182,6 @@ public class Apartment {
 	public void setDeposit(Double deposit) {
 		this.deposit = deposit;
 	}
+	*/
 
 }

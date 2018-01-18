@@ -13,6 +13,10 @@ import javax.persistence.ManyToOne;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 import javax.validation.constraints.NotNull;
+
+import org.hibernate.annotations.Cascade;
+import org.hibernate.annotations.CascadeType;
+
 import javax.persistence.ForeignKey;
 
 
@@ -39,25 +43,22 @@ public class Schedule {
 	}
 	@Id @GeneratedValue(strategy=GenerationType.AUTO)
 	private int id;
-	
 	@Temporal(TemporalType.DATE)
 	@Column
 	@NotNull
-	private Date from_date;
-	
-	
+	private Date from_date;		
 	@Temporal(TemporalType.DATE)
 	@Column
 	@NotNull
-	private Date to_date;
-	
+	private Date to_date;	
 	//Table joins for many to many relationships
 	@ManyToOne
-	@JoinColumn(nullable=false, foreignKey = @ForeignKey(name = "person_personID"))
+	@JoinColumn(nullable=true, foreignKey = @ForeignKey(name = "person_personID"))
+	@Cascade({CascadeType.ALL})
 	private Person personID;
-	
 	@ManyToOne
-	@JoinColumn(nullable=false, foreignKey = @ForeignKey(name = "room_roomIDs"))
+	@JoinColumn(nullable=true, foreignKey = @ForeignKey(name = "room_roomIDs"))
+	@Cascade({CascadeType.ALL})
 	private Room roomID;
 	
 	
