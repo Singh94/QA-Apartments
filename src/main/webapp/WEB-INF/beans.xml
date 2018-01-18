@@ -22,10 +22,4 @@
       http://xmlns.jcp.org/xml/ns/javaee
       http://xmlns.jcp.org/xml/ns/javaee/beans_1_1.xsd" bean-discovery-mode="all">
       
-      <alternatives>
-      	<class>com.qa.apartment.business.PersonMapImpl</class>
-        <class>com.qa.apartment.business.RoomImpl</class>
-        <class>com.qa.apartment.business.ScheduleImple</class>
-        <class>com.qa.apartment.business.ApartmentServiceMapImpl</class>
-      </alternatives>
 </beans>

@@ -4,14 +4,11 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import javax.enterprise.context.ApplicationScoped;
-import javax.enterprise.inject.Alternative;
 import javax.inject.Inject;
 import com.qa.apartment.persistance.Apartment;
 import com.qa.apartment.util.JSONUtil;
 
-@ApplicationScoped
-@Alternative
+
 public class ApartmentServiceMapImpl implements ApartmentService{
 	
 	private final int INITIAL_COUNT = 1;

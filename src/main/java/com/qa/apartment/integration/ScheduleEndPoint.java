@@ -29,7 +29,7 @@ public class ScheduleEndPoint {
 	}
 	
 	@GET
-	@Path("/json/{id}")
+	@Path("/json")
 	@Produces({ "application/json" })
 	public String getSchedule(@PathParam("id") Long id) {
 		return impl.findSchedule(id);

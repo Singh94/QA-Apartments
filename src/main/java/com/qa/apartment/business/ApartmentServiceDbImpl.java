@@ -3,7 +3,6 @@ package com.qa.apartment.business;
 import javax.inject.Inject;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
-import javax.persistence.Query;
 import javax.persistence.TypedQuery;
 import javax.transaction.Transactional;
 
@@ -24,7 +23,7 @@ public class ApartmentServiceDbImpl implements ApartmentService {
 	}
 
 	public String findAllApartments() {
-		Query query = em.createQuery("SELECT a FROM Apartment a ORDER BY a.id", Apartment.class);
+		TypedQuery<Apartment> query = em.createQuery("SELECT a FROM Apartment a ORDER BY a.id", Apartment.class);
 		return util.getJSONForObject(query.getResultList());
 	}
 

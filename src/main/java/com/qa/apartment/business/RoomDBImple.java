@@ -58,7 +58,7 @@ public class RoomDBImple implements RoomService{
 	
 	@Override
 	public List<Room> findAllRooms() {
-		TypedQuery<Room> query = em.createQuery("SELECT r FROM ROOM r ORDER BY r.id", Room.class);
+		TypedQuery<Room> query = em.createQuery("SELECT r FROM Room r ORDER BY r.id", Room.class);
 		return query.getResultList();
 	}
 	
