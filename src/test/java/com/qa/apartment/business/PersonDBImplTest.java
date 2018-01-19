@@ -1,5 +1,7 @@
 package com.qa.apartment.business;
 
+import javax.persistence.EntityManager;
+
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
@@ -13,7 +15,7 @@ import com.qa.apartment.persistance.Person;
 import com.qa.apartment.util.JSONUtil;
 
 @RunWith(MockitoJUnitRunner.class)
-public class PersonServiceTest {
+public class PersonDBImplTest {
 
 	private String testJsonStringA;
 	private String testJsonStringB;
@@ -21,7 +23,7 @@ public class PersonServiceTest {
 	private Person bPerson;
 
 	@InjectMocks
-	private PersonMapImpl impl;
+	private PersonDBImple impl;
 
 	@Mock
 	private JSONUtil util;
@@ -42,7 +44,8 @@ public class PersonServiceTest {
 	public void testCreatePersonFromString() {
 
 		Mockito.when(util.getObjectForJSON(testJsonStringA, Person.class)).thenReturn(aPerson);
-
+		Mockito.when(impl.createPersonFromString(testJsonStringA)).thenReturn("{\"message\": \"person sucessfully added\"}");
+		
 		String returnedString = impl.createPersonFromString(testJsonStringA);
 		Assert.assertEquals("{\"message\": \"person sucessfully added\"}", returnedString);
 
@@ -105,7 +108,7 @@ public class PersonServiceTest {
 	//
 	// impl.createPersonFromString(testJsonStringA);
 	// System.out.println(impl.findAllPersons());
-	// System.out.println(util.getJSONForObject(impl.getMap()));
+	// System.out.println(impl.getMap());
 	//
 	// } THERE IS A BUG WITH getJSONForObject which returns null
 

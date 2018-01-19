@@ -1,7 +1,6 @@
 package com.qa.apartment.business;
 
-import java.util.List;
-
+import javax.enterprise.context.ApplicationScoped;
 import javax.inject.Inject;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
@@ -11,6 +10,7 @@ import com.qa.apartment.persistance.Person;
 import com.qa.apartment.util.JSONUtil;
 
 @Transactional(Transactional.TxType.SUPPORTS)
+@ApplicationScoped
 public class PersonDBImple implements PersonService{
 
 	@PersistenceContext(unitName = "primary")
